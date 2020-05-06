@@ -6,6 +6,17 @@ media_folder: static/img
 public_folder: /img
 
 collections:
+  - name: 'tag'
+    label: 'Tag'
+    format: 'json'
+    folder: 'assets/content/tag'
+    create: true
+    slug: '{{slug}}'
+    editor:
+      preview: false
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Thumbnail image', name: 'thumbnail', widget: 'image' }
   - name: 'project'
     label: 'Project'
     format: 'json'
@@ -20,4 +31,4 @@ collections:
       - { label: 'Description', name: 'description', widget: 'text' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
       - { label: 'Thumbnail image', name: 'thumbnail', widget: 'image' }
-      - { label: 'Tags', name: 'tags', widget: 'list' }
+      - { label: 'Tags', name: 'tags', widget: 'relation', collection: 'tag', valueField: '{{slug}}', searchFields: ['title'], multiple: true  }
