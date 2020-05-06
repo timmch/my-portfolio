@@ -1,5 +1,11 @@
 /* purgecss start ignore */
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
+/* Add components here */
+
 /* purgecss end ignore */
 @import 'tailwindcss/utilities';
+
+body {
+    background-color: #f7fafc;
+}
