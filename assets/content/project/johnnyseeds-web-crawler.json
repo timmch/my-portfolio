@@ -1,7 +1,7 @@
 {
   "date": "2020-05-06T22:50:26.762Z",
   "body": "I made a thing. A “garden planner” that will help you know when to harvest.\n\nYou can add your plants from a database of seeds and the date they went in the ground and the website will let you know when to expect to harvest them.\n\nYou can use it [here](https://timmch.github.io/Garden-Planner/#/).\n\nIf you visit https://timmch.github.io/Garden-Planner/#/gardens/ricks it will make a copy of my garden so you can see what it looks like before starting your own (to clear it out, just remove each plant).\n\nIt all saves to your web browser for now, so it won’t transfer to other devices.\n\nI’ve made it rather quickly, so there may be bugs.\n\nIt’s built for mobile and may look strange on a desktop device.\n\n### Technologies and Libraries\n* Python 3\n* [Scrapy](https://scrapy.org/)",
-  "description": "test",
+  "description": "A Python web crawler for generating JSON files of seed harvesting information.",
   "title": "JohnnySeeds Web Crawler",
   "tags": [
     "python"
