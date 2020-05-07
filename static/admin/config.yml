@@ -16,6 +16,7 @@ collections:
       preview: false
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Color', name: 'color', widget: 'string' }
       - { label: 'Thumbnail image', name: 'thumbnail', widget: 'image' }
   - name: 'project'
     label: 'Project'

@@ -1,0 +1,20 @@
+.markdown-container h3 {
+    @apply font-mono text-xl mt-5;
+}
+
+.markdown-container ul {
+    @apply pl-6;
+    list-style: square;
+}
+
+.markdown-container ul>li {
+    @apply mt-2;
+}
+
+.markdown-container a {
+    @apply text-teal-500 underline;
+}
+
+.markdown-container p {
+    @apply mt-3 font-normal leading-snug;
+}

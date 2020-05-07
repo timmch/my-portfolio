@@ -6,7 +6,8 @@
  */
 module.exports = {
   theme: {
-    blue: '#00bfff'
+    blue: '#00bfff',
+    teal: '#20c4cb'
   },
   variants: {
     display: ['responsive', 'hover', 'focus']
