@@ -17,7 +17,7 @@ collections:
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Color', name: 'color', widget: 'string' }
-      - { label: 'Thumbnail image', name: 'thumbnail', widget: 'image' }
+      - { label: 'Font Awesome icon', name: 'icon', widget: 'string' }
   - name: 'project'
     label: 'Project'
     format: 'json'
