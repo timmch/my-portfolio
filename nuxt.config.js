@@ -1,20 +1,30 @@
-const dynamicRoutes = () => {
-  const projectFiles = require.context(
-    '~/assets/content/project/',
-    false,
-    /\.json$/
-  )
-  return projectFiles.keys().map((key) => {
-    const res = projectFiles(key)
-    const slug = key.slice(2, -5)
-    return '/projects/' + slug
-  })
-}
+// async function getProjectFiles() {
+//   const projectFiles = await require.context(
+//     '~/assets/content/project/',
+//     false,
+//     /\.json$/
+//   )
+//   return projectFiles
+// }
 
+// const projectFiles = getProjectFiles()
+
+// console.log('projectFiles', projectFiles)
+
+// const dynamicRoutes = () => {
+//   return new Promise((resolve) => {
+//     resolve(
+//       projectFiles.keys().map((key) => {
+//         const slug = key.slice(2, -5)
+//         console.log('slug', slug)
+//         return '/projects/' + slug
+//       })
+//     )
+//     // resolve(data.map((el) => `product/${el.id}`))
+//   })
+// }
+// console.log('dynamic routes', dynamicRoutes)
 export default {
-  generate: {
-    routes: [dynamicRoutes]
-  },
   mode: 'universal',
   /*
    ** Headers of the page
@@ -38,6 +48,11 @@ export default {
         rel: 'stylesheet'
       }
     ]
+  },
+  generate: {
+    routes() {
+      return ['/projects/johnnyseeds-web-crawler']
+    }
   },
   /*
    ** Customize the progress-bar color
