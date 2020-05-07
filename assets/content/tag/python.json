@@ -1,4 +1,6 @@
 {
   "title": "Python",
-  "thumbnail": "/img/python_image.png"
+  "thumbnail": "/img/python_image.png",
+  "icon": "python",
+  "color": "#ffdf5c"
 }
