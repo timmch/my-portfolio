@@ -1,7 +1,11 @@
 <template>
   <div>
     <div v-for="project in projects" :key="project.slug">
-      {{ project.title }}
+      <nuxt-link
+        :to="{ name: 'projects-project', params: { project: project.slug } }"
+        prefetch
+        >{{ project.title }}</nuxt-link
+      >
     </div>
   </div>
 </template>

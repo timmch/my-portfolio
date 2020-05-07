@@ -1,9 +1,12 @@
 <template>
   <div class=" max-w-lg mx-auto mt-16">
     <div>
-      <a class="text-gray-600 border-2 rounded p-2 text-sm" href="#">
-        <fa icon="chevron-left" /> See all projects
-      </a>
+      <nuxt-link
+        :to="{ name: 'projects' }"
+        class="text-gray-600 border-2 rounded p-2 text-sm"
+        prefetch
+        ><fa icon="chevron-left" /> See all projects</nuxt-link
+      >
     </div>
     <h1 class=" text-2xl font-bold mt-6">{{ project.title }}</h1>
     <img class="mt-4 rounded-md shadow-lg" :src="project.thumbnail" alt="" />
