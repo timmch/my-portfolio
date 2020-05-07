@@ -1,4 +1,20 @@
+const dynamicRoutes = () => {
+  const projectFiles = require.context(
+    '~/assets/content/project/',
+    false,
+    /\.json$/
+  )
+  return projectFiles.keys().map((key) => {
+    const res = projectFiles(key)
+    const slug = key.slice(2, -5)
+    return '/projects/' + slug
+  })
+}
+
 export default {
+  generate: {
+    routes: [dynamicRoutes]
+  },
   mode: 'universal',
   /*
    ** Headers of the page
