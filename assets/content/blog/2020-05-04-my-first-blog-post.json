@@ -1,6 +1,0 @@
-{
-  "date": "2020-05-04T15:29:53.668Z",
-  "body": "# Building this repo\n\n## Nuxt\nI have setup the basic Nuxt.JS project.\n\n## Netlify\nI have created my Netflify project and deployed the first build.\n\n-Tim",
-  "title": "My first blog post",
-  "description": "A short writeup of how I got to this point."
-}

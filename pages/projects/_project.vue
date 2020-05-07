@@ -9,13 +9,13 @@
     <img class="mt-4 rounded-md shadow-lg" :src="project.thumbnail" alt="" />
     <div class="mt-1">
       <span
-        v-for="tag in project.tags"
-        :key="tag"
-        style="background: #ffdf5c"
+        v-for="tag in tags"
+        :key="tag.slug"
+        :style="{ background: tag.color }"
         class=" px-2 py-1 inline-block"
       >
-        <fa :icon="['fab', 'python']" />
-        {{ tag }}
+        <fa :icon="['fab', tag.icon]" />
+        {{ tag.title }}
       </span>
     </div>
     <div
@@ -33,6 +33,25 @@ export default {
       return {
         project: await require(`~/assets/content/project/${params.project}.json`)
       }
+  },
+  data() {
+    return {
+      tags: []
+    }
+  },
+  created() {
+    if (this.project && this.project.tags && this.project.tags.length >= 1) {
+      const allTags = this.$store.state.tags
+      for (let i = 0; i < this.project.tags.length; i++) {
+        const tagForThisProject = this.project.tags[i]
+        for (let j = 0; j < allTags.length; j++) {
+          const tagToCompare = allTags[j]
+          if (tagToCompare.slug === tagForThisProject) {
+            this.tags.push(tagToCompare)
+          }
+        }
+      }
+    }
   }
 }
 </script>
