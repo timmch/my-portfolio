@@ -1,17 +1,29 @@
 <template>
   <div class="px-8 py-16">
-    <div class="flex">
+    <div>
       <div
-        v-for="tag in tags"
-        :key="tag.slug"
-        class="flex flex-col justify-center p-2 w-auto"
-        :style="{ background: tag.color }"
+        class="border-b border-gray-400 w-auto inline-block pr-1 text-teal-500 cursor-pointer"
+        @click="toggleTagFilter"
       >
-        <fa :icon="['fab', tag.icon]" class="fa--tag h-8" />
+        Filter by tech stack&nbsp;&nbsp;
+        <fa v-show="showTags" :icon="['fas', 'caret-up']" />
+        <fa v-show="!showTags" :icon="['fas', 'caret-down']" />
+      </div>
+      <div v-show="showTags" class="grid grid-cols-4 mt-2">
+        <div
+          v-for="tag in tags"
+          :key="tag.slug"
+          class="flex flex-col justify-center p-2 w-16 border rounded"
+          :class="tag.selected ? 'shadow' : ''"
+          :style="{ background: tag.selected ? tag.color : '' }"
+          @click="selectTag(tag.slug)"
+        >
+          <fa :icon="['fab', tag.icon]" class="fa--tag h-8" />
 
-        <h5 class="text-center">
-          {{ tag.title }}
-        </h5>
+          <h5 class="text-center">
+            {{ tag.title }}
+          </h5>
+        </div>
       </div>
     </div>
     <div class="mt-6">
@@ -35,12 +47,33 @@
 
 <script>
 export default {
+  data() {
+    return {
+      showTags: false
+    }
+  },
   computed: {
     projects() {
       return this.$store.state.projects
     },
     tags() {
-      return this.$store.state.tags
+      const tagsData = [...this.$store.state.tags]
+      for (let i = 0; i < tagsData.length; i++) {
+        tagsData[i].selected = false
+      }
+      return tagsData
+    }
+  },
+  methods: {
+    selectTag(slug) {
+      this.$store.commit('addSelectedTag', slug)
+    },
+    toggleTagFilter() {
+      if (this.showTags) {
+        // Clear filter
+        this.$store.commit('clearSelectedTags')
+      }
+      this.showTags = !this.showTags
     }
   }
 }

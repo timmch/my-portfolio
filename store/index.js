@@ -1,6 +1,7 @@
 export const state = () => ({
   projects: [],
-  tags: []
+  tags: [],
+  selectedTags: []
 })
 
 export const mutations = {
@@ -9,6 +10,14 @@ export const mutations = {
   },
   setTags(state, list) {
     state.tags = list
+  },
+  addSelectedTag(state, slug) {
+    if (!state.selectedTags.includes(slug)) {
+      state.selectedTags.push(slug)
+    }
+  },
+  clearSelectedTags(state) {
+    state.selectedTags = []
   }
 }
 
