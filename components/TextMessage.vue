@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="w-full">
     <typing-indicator v-show="!showMessage" />
     <div
       v-show="showMessage"
