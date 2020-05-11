@@ -96,7 +96,7 @@ export default {
   },
   data() {
     return {
-      showFirstText: false,
+      showFirstText: true,
       showSecondText: false,
       showThirdText: false,
 
@@ -107,9 +107,9 @@ export default {
     }
   },
   mounted() {
-    setTimeout(() => {
-      this.showFirstText = true
-    }, 250)
+    // setTimeout(() => {
+    //   this.showFirstText = true
+    // }, 250)
 
     // +2000
     setTimeout(() => {
