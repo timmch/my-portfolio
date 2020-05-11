@@ -1,6 +1,9 @@
 <template>
   <div>
-    <div class="bg-indigo-800 p-4 pt-12 pb-8">
+    <div
+      class="bg-indigo-800 p-4 pt-12 pb-8 shadow"
+      style="background: url(/img/bananas.png)"
+    >
       <img
         src="/img/Tim_Profile.jpg"
         class=" w-32 rounded-full border-2 border-white m-auto mb-6"
