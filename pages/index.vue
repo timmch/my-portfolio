@@ -1,64 +1,41 @@
 <template>
   <div>
-    <div
-      class="bg-indigo-800 p-4 pt-12 pb-8 shadow"
-      style="background: url(/img/bananas.png)"
-    >
-      <img
-        src="/img/Tim_Profile.jpg"
-        class=" w-32 rounded-full border-2 border-white m-auto mb-6"
-        alt=""
-      />
-      <div
-        class="flex flex-col px-6 py-4 items-start sm:mx-auto  max-w-lg border border-gray-300 rounded shadow-2xl overflow-y-scroll sm:w-full bg-white"
-      >
-        <div class="text-center w-full">
-          <h5><strong>Today</strong> 11:38 AM</h5>
-        </div>
-
-        <text-message
-          v-show="showFirstText"
-          text-content="Hi 👋<br />I'm Tim McHugh."
-          delay-time="1000"
-        />
-
-        <text-message
-          v-if="showSecondText"
-          text-content="Welcome to my website, I'm glad you are here!"
-          delay-time="1500"
-        />
-
-        <text-message
-          v-if="showThirdText"
-          text-content="Take a look around to learn more about me and my work."
-          delay-time="1750"
-        />
-
-        <div v-for="(gif, index) in gifs" :key="index">
-          <img v-if="gifCount > index" :src="gif" class="w-7/12 mt-1 rounded" />
-        </div>
-
-        <!-- <div
-        v-show="showTextOptions"
-        class="flex flex-wrap justify-end mt-2 w-full"
-      >
-        <a
-          href="#projects"
-          class="border border-gray-800 rounded-full px-4 py-1 mt-1 shadow cursor-pointer"
+    <div class="bg-gray-200">
+      <img class="m-auto" src="/img/TimMcHugh_Full.jpg" alt="" />
+      <div class="px-4 pt-0 relative" style="margin-top: -8px; top: -40px;">
+        <div
+          class="flex flex-col px-6 py-4 items-start sm:mx-auto  max-w-lg border border-gray-300 rounded shadow-2xl overflow-y-scroll sm:w-full bg-white"
         >
-          Jump to projects
-        </a>
-        <a
-          v-show="gifCount < 3"
-          class="border border-gray-800 rounded-full px-4 py-1 mt-1 ml-1 shadow cursor-pointer"
-          @click="requestGif"
-        >
-          Request a gif
-        </a>
-      </div> -->
+          <div class="text-center w-full">
+            <h5><strong>Today</strong> 11:38 AM</h5>
+          </div>
 
-        <!-- Loader -->
-        <!-- Take a look around to learn more about me and my work -->
+          <text-message
+            v-show="showFirstText"
+            text-content="Hi 👋<br />I'm Tim McHugh."
+            delay-time="1000"
+          />
+
+          <text-message
+            v-if="showSecondText"
+            text-content="Welcome to my website, I'm glad you are here!"
+            delay-time="1500"
+          />
+
+          <text-message
+            v-if="showThirdText"
+            text-content="Take a look around to learn more about me and my work."
+            delay-time="1750"
+          />
+
+          <div v-for="(gif, index) in gifs" :key="index">
+            <img
+              v-if="gifCount > index"
+              :src="gif"
+              class="w-7/12 mt-1 rounded"
+            />
+          </div>
+        </div>
       </div>
     </div>
 
