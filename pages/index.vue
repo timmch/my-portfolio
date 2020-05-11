@@ -22,13 +22,13 @@
         <text-message
           v-if="showSecondText"
           text-content="Welcome to my website, I'm glad you are here!"
-          delay-time="1250"
+          delay-time="1500"
         />
 
         <text-message
           v-if="showThirdText"
           text-content="Take a look around to learn more about me and my work."
-          delay-time="1500"
+          delay-time="1750"
         />
 
         <div v-for="(gif, index) in gifs" :key="index">
@@ -114,17 +114,17 @@ export default {
     // +2000
     setTimeout(() => {
       this.showSecondText = true
-    }, 2250)
+    }, 1750)
 
     // +2500
     setTimeout(() => {
       this.showThirdText = true
-    }, 5000)
+    }, 4000)
 
     // +500
-    setTimeout(() => {
-      this.showTextOptions = true
-    }, 7000)
+    // setTimeout(() => {
+    //   this.showTextOptions = true
+    // }, 7000)
   },
   methods: {
     requestGif() {
