@@ -1,40 +1,32 @@
 <template>
   <div>
-    <div class="bg-gray-200">
+    <div class="bg-gray-200" style="min-height: 550px;">
       <img class="m-auto" src="/img/TimMcHugh_Full.jpg" alt="" />
       <div class="px-4 pt-0 relative" style="margin-top: -8px; top: -40px;">
         <div
           class="flex flex-col px-6 py-4 items-start sm:mx-auto  max-w-lg border border-gray-300 rounded shadow-2xl overflow-y-scroll sm:w-full bg-white"
         >
-          <div class="text-center w-full">
-            <h5><strong>Today</strong> 11:38 AM</h5>
+          <div class="text-center w-full mb-2">
+            <h5><strong>Today</strong> {{ loadTime }}</h5>
           </div>
 
           <text-message
             v-show="showFirstText"
             text-content="Hi 👋<br />I'm Tim McHugh."
-            delay-time="1000"
+            :delay-time="1000"
           />
 
           <text-message
             v-if="showSecondText"
             text-content="Welcome to my website, I'm glad you are here!"
-            delay-time="1500"
+            :delay-time="1500"
           />
 
           <text-message
             v-if="showThirdText"
             text-content="Take a look around to learn more about me and my work."
-            delay-time="1750"
+            :delay-time="1750"
           />
-
-          <div v-for="(gif, index) in gifs" :key="index">
-            <img
-              v-if="gifCount > index"
-              :src="gif"
-              class="w-7/12 mt-1 rounded"
-            />
-          </div>
         </div>
       </div>
     </div>
@@ -78,33 +70,25 @@ export default {
     return {
       showFirstText: true,
       showSecondText: false,
-      showThirdText: false,
-
-      gifCount: 0,
-
-      showTextOptions: false,
-      gifs: ['/img/Pirates.webp', '/img/Dumb.gif', '/img/Shia.gif']
+      showThirdText: false
     }
   },
+  computed: {
+    loadTime() {
+      return this.$store.state.initialLoadTime
+    }
+  },
+  beforeCreate() {
+    this.$store.dispatch('setInitialLoadTimeIfNull')
+  },
   mounted() {
-    // setTimeout(() => {
-    //   this.showFirstText = true
-    // }, 250)
-
-    // +2000
     setTimeout(() => {
       this.showSecondText = true
     }, 1750)
 
-    // +2500
     setTimeout(() => {
       this.showThirdText = true
     }, 4000)
-
-    // +500
-    // setTimeout(() => {
-    //   this.showTextOptions = true
-    // }, 7000)
   },
   methods: {
     requestGif() {

@@ -1,10 +1,14 @@
 export const state = () => ({
   projects: [],
   tags: [],
-  selectedTags: []
+  selectedTags: [],
+  initialLoadTime: null
 })
 
 export const mutations = {
+  setInitialLoadTime(state) {
+    state.initialLoadTime = new Date()
+  },
   setProjects(state, list) {
     state.projects = list
   },
@@ -22,6 +26,12 @@ export const mutations = {
 }
 
 export const actions = {
+  setInitialLoadTimeIfNull({ commit, state }) {
+    // console.log('here', state.initialLoadTime)
+    if (!state.initialLoadTime) {
+      commit('setInitialLoadTime')
+    }
+  },
   async nuxtServerInit({ commit }) {
     // Get project files
     const projectFiles = await require.context(
