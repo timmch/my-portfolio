@@ -8,7 +8,7 @@
         >
           <div class="text-center w-full mb-2">
             <client-only>
-              <h5>{{ prettyLoadTime }}</h5>
+              <h5>{{ new Date() }}</h5>
             </client-only>
           </div>
 
