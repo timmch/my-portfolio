@@ -7,7 +7,7 @@
           class="flex flex-col px-6 py-4 items-start sm:mx-auto  max-w-lg border border-gray-300 rounded shadow-2xl overflow-y-scroll sm:w-full bg-white"
         >
           <div class="text-center w-full mb-2">
-            <h5><strong>Today</strong> {{ loadTime }}</h5>
+            <h5>{{ prettyLoadTime }}</h5>
           </div>
 
           <text-message
@@ -60,6 +60,7 @@
 </template>
 
 <script>
+import moment from 'moment'
 import TextMessage from '@/components/TextMessage.vue'
 
 export default {
@@ -74,8 +75,9 @@ export default {
     }
   },
   computed: {
-    loadTime() {
-      return this.$store.state.initialLoadTime
+    prettyLoadTime() {
+      const loadTime = this.$store.state.initialLoadTime
+      return moment(loadTime).calendar()
     }
   },
   beforeCreate() {
