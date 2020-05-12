@@ -7,7 +7,9 @@
           class="flex flex-col px-6 py-4 items-start sm:mx-auto  max-w-lg border border-gray-300 rounded shadow-2xl overflow-y-scroll sm:w-full bg-white"
         >
           <div class="text-center w-full mb-2">
-            <h5>{{ prettyLoadTime }}</h5>
+            <client-only>
+              <h5>{{ prettyLoadTime }}</h5>
+            </client-only>
           </div>
 
           <text-message
