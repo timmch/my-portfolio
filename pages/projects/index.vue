@@ -1,5 +1,5 @@
 <template>
-  <div class="px-8 py-16">
+  <div class="px-8 py-16 lg:mx-auto max-w-4xl">
     <div>
       <div
         class="border-b border-gray-400 w-auto inline-block pr-1 text-teal-500 cursor-pointer"

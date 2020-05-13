@@ -3,7 +3,7 @@
     <typing-indicator v-show="!showMessage" />
     <div
       v-show="showMessage"
-      class="bg-indigo-500 text-white font-sans font-light p-2 w-56 text-message mt-2 md:w-7/12 shadow rounded-lg"
+      class="bg-indigo-500 text-white font-sans font-light p-2 w-56 text-message mt-2 lg:w-9/12 lg:text-lg shadow rounded-lg"
     >
       <div v-html="textContent"></div>
     </div>
