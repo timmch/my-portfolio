@@ -47,7 +47,7 @@
           offered by technology to create progress away from the keyboard.
         </p>
         <p class="font-serif mt-4 text-xl">
-          Outside of the “office”, I’m committed to family and fitness. I love
+          Outside of the “office,” I’m committed to family and fitness. I love
           to cook, and I am always looking to try a new dish that can bring a
           smile to someone’s face. I’m currently trying my hand at gardening,
           like most things I do its developed into a big project (If all turns
