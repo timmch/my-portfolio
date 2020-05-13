@@ -1,7 +1,7 @@
 export const state = () => ({
   projects: [],
   tags: [],
-  selectedTags: [],
+  selectedTag: null,
   initialLoadTime: null
 })
 
@@ -15,13 +15,15 @@ export const mutations = {
   setTags(state, list) {
     state.tags = list
   },
-  addSelectedTag(state, slug) {
-    if (!state.selectedTags.includes(slug)) {
-      state.selectedTags.push(slug)
+  toggleTag(state, slug) {
+    if (state.selectedTag === slug) {
+      state.selectedTag = null
+    } else {
+      state.selectedTag = slug
     }
   },
-  clearSelectedTags(state) {
-    state.selectedTags = []
+  clearSelectedTag(state) {
+    state.selectedTag = null
   }
 }
 

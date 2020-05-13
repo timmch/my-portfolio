@@ -87,7 +87,7 @@
         <div class="mt-6 md:mt-12">
           <nuxt-link
             to="/projects"
-            class="text-teal-500 text-xl border-2 border-teal-500 py-3 px-12 rounded hover:bg-teal-500 hover:text-white active:bg-teal-800 shadow-lg"
+            class="text-teal-500 text-xl border-2 border-teal-500 py-3 px-12 w-full md:w-auto rounded hover:bg-teal-500 hover:text-white active:bg-teal-800 shadow-lg"
           >
             Browse all projects
           </nuxt-link>

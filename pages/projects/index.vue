@@ -1,22 +1,20 @@
 <template>
   <div class="px-8 py-16 lg:mx-auto max-w-4xl">
+    <h1 class="text-4xl">Projects</h1>
     <div>
-      <div
-        class="border-b border-gray-400 w-auto inline-block pr-1 text-teal-500 cursor-pointer"
-        @click="toggleTagFilter"
-      >
-        Filter by tech stack&nbsp;&nbsp;
-        <fa v-show="showTags" :icon="['fas', 'caret-up']" />
-        <fa v-show="!showTags" :icon="['fas', 'caret-down']" />
-      </div>
-      <div v-show="showTags" class="grid grid-cols-4 mt-2">
+      <h5 class="text-gray-600">
+        Filter by language or framework
+      </h5>
+      <div class="flex mt-1">
         <div
           v-for="tag in tags"
           :key="tag.slug"
-          class="flex flex-col justify-center p-2 w-16 border rounded"
+          class="flex flex-col justify-center p-2 w-16 border rounded mr-2 text-gray-800"
           :class="tag.selected ? 'shadow' : ''"
-          :style="{ background: tag.selected ? tag.color : '' }"
-          @click="selectTag(tag.slug)"
+          :style="{
+            background: selectedTag === tag.slug ? tag.color : ''
+          }"
+          @click="toggleTag(tag.slug)"
         >
           <fa :icon="['fab', tag.icon]" class="fa--tag h-8" />
 
@@ -27,7 +25,7 @@
       </div>
     </div>
 
-    <div class="mt-8">
+    <div class="mt-2">
       <div v-for="project in projects" :key="project.slug">
         <div class="border-b border-indigo-400">
           <div
@@ -71,7 +69,17 @@ export default {
   },
   computed: {
     projects() {
-      return this.$store.state.projects
+      console.log('here', this.selectedTag)
+      if (!this.selectedTag) return this.$store.state.projects
+      console.log('continues')
+      const result = this.$store.state.projects.filter((project) =>
+        project.tags.includes(this.selectedTag)
+      )
+
+      return result
+    },
+    selectedTag() {
+      return this.$store.state.selectedTag
     },
     tags() {
       const tagsData = [...this.$store.state.tags]
@@ -82,15 +90,8 @@ export default {
     }
   },
   methods: {
-    selectTag(slug) {
-      this.$store.commit('addSelectedTag', slug)
-    },
-    toggleTagFilter() {
-      if (this.showTags) {
-        // Clear filter
-        this.$store.commit('clearSelectedTags')
-      }
-      this.showTags = !this.showTags
+    toggleTag(slug) {
+      this.$store.commit('toggleTag', slug)
     }
   }
 }
