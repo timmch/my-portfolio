@@ -34,8 +34,8 @@
     </div>
 
     <div class="bg-indigo-600 text-white px-8 py-12">
-      <h3 class="text-2xl">About</h3>
-      <p class="font-serif mt-6">
+      <h3 class="text-4xl">About</h3>
+      <p class="font-serif mt-6 text-xl">
         My passion for technology can be traced back to my pre-professional
         days. Whether I was booting obscure linux distros or building black jack
         games in the terminal, I’ve been on a technology path from the start.
@@ -45,14 +45,14 @@
         >
         offered by technology to create progress away from the keyboard.
       </p>
-      <p class="font-serif mt-3">
+      <p class="font-serif mt-3 text-xl">
         Outside of the “office”, I’m committed to family and fitness. I love to
         cook, and I am always looking to try a new dish that can bring a smile
         to someone’s face. I’m currently trying my hand at gardening, like most
         things I do its developed into a big project (If all turns out well,
         I’ll be needing to get rid of 100 watermelons).
       </p>
-      <nuxt-link to="/about" class="underline mt-4 block text-lg text-teal-100">
+      <nuxt-link to="/about" class="underline mt-4 block text-xl text-teal-100">
         Read more
       </nuxt-link>
     </div>
@@ -76,7 +76,7 @@
           <h5 class="font-bold text-2xl leading-tight mt-8">
             The project I share the most
           </h5>
-          <p class="mt-2">
+          <p class="mt-2 text-xl">
             I tell all my friends about my
             <nuxt-link
               to="/projects/johnnyseeds-web-crawler"
@@ -98,7 +98,7 @@
           <h5 class="font-bold text-2xl leading-tight mt-8">
             A project built across cultures
           </h5>
-          <p class="mt-2">
+          <p class="mt-2 text-xl">
             For the
             <nuxt-link to="/projects" class="underline text-teal-400"
               >Virtual Classes</nuxt-link
