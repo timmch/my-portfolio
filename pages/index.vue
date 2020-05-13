@@ -62,13 +62,19 @@
         Portfolio
       </h4>
       <h2 class="text-4xl leading-tight">Featured Projects</h2>
-      <div class="grid md:grid-cols-2 text-left mt-6">
+      <div class="grid md:grid-cols-2 text-left mt-10">
         <div
-          class="py-8 px-8 md:p-16 rounded-lg border-indigo-400 border-2 shadow-xl"
+          class="pt-0 pb-8 px-8 md:p-16 rounded-lg border-indigo-400 border-2 shadow-lg"
         >
-          <h5 class="font-bold text-2xl leading-tight">
-            <fa :icon="['fas', 'bullhorn']" />
-            &nbsp;The project I share the most
+          <div class="text-center h-0">
+            <fa
+              class="h-12 w-12 p-2 fill-current text-white bg-indigo-500 rounded-full relative"
+              :icon="['fas', 'bullhorn']"
+              style="width: 3rem !important; top: -1.5rem;"
+            />
+          </div>
+          <h5 class="font-bold text-2xl leading-tight mt-8">
+            The project I share the most
           </h5>
           <p class="mt-2">
             I tell all my friends about my
@@ -80,11 +86,17 @@
           </p>
         </div>
         <div
-          class="py-8 px-8 md:p-16 rounded-lg border-indigo-400 border-2 shadow-xl mt-4"
+          class="pt-0 pb-8 px-8 md:p-16 rounded-lg border-indigo-400 border-2 shadow-lg mt-8"
         >
-          <h5 class="font-bold text-2xl leading-tight">
-            <fa :icon="['fas', 'globe-americas']" />
-            &nbsp;A project built across cultures
+          <div class="text-center h-0">
+            <fa
+              class="h-12 w-12 p-2 fill-current text-white bg-indigo-500 rounded-full relative"
+              :icon="['fas', 'globe-americas']"
+              style="width: 3rem !important; top: -1.5rem;"
+            />
+          </div>
+          <h5 class="font-bold text-2xl leading-tight mt-8">
+            A project built across cultures
           </h5>
           <p class="mt-2">
             For the
