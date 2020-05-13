@@ -26,20 +26,37 @@
         </div>
       </div>
     </div>
-    <div class="mt-6">
+
+    <div class="mt-8">
       <div v-for="project in projects" :key="project.slug">
-        <nuxt-link
-          :to="{ name: 'projects-project', params: { project: project.slug } }"
-          prefetch
-        >
-          <div class=" border-gray-300 border-1 rounded shadow">
-            <img :src="project.thumbnail" alt="" />
-            <div class="p-4">
-              <h2 class="text-xl">{{ project.title }}</h2>
-              <p>{{ project.description }}</p>
+        <div class="border-b border-indigo-400">
+          <div
+            class="lg:grid items-center py-4 lg:py-6"
+            style="grid-template-columns: auto 200px"
+          >
+            <div class="lg:pr-10">
+              <h2 class="text-2xl text-indigo-600 mb-1">{{ project.title }}</h2>
+              <p class="mb-1">{{ project.description }}</p>
+              <div>
+                <span
+                  v-for="(tag, index) in project.tags"
+                  :key="index"
+                  class="text-gray-600 italics inline-block pr-2"
+                  >#{{ tag }}</span
+                >
+              </div>
             </div>
+            <nuxt-link
+              class="block py-2 border border-teal-500 text-teal-500 rounded hover:bg-teal-500 hover:text-white text-center mt-4 mb-2 lg:my-0 self-center"
+              :to="{
+                name: 'projects-project',
+                params: { project: project.slug }
+              }"
+              prefetch
+              >Learn more</nuxt-link
+            >
           </div>
-        </nuxt-link>
+        </div>
       </div>
     </div>
   </div>
@@ -82,5 +99,11 @@ export default {
 <style scoped>
 .fa--tag {
   width: 100%;
+}
+.bullet-icon {
+  width: 1rem !important;
+  @screen lg {
+    width: 2rem !important;
+  }
 }
 </style>

@@ -43,9 +43,7 @@
           days. Whether I was booting obscure linux distros or building black
           jack games in the terminal, I’ve been on a technology path from the
           start. The reason? I like
-          <span class="bg-yellow-400 text-gray-700"
-            >exploring the possibilities</span
-          >
+          <highlighted-text selected-text="exploring the possibilities" />
           offered by technology to create progress away from the keyboard.
         </p>
         <p class="font-serif mt-3 text-xl">
@@ -70,50 +68,21 @@
           Portfolio
         </h4>
         <h2 class="text-4xl leading-tight">Featured Projects</h2>
-        <div class="grid md:grid-cols-2 text-left mt-10 md:mt-12">
-          <div
-            class="pt-0 pb-8 px-8 md:px-12 mr-2 rounded-lg border-indigo-400 border-2 shadow-lg"
-          >
-            <div class="h-0">
-              <fa
-                class="h-12 w-12 p-2 fill-current text-white bg-indigo-500 rounded-full relative md:h-16 md:p-4 project-icon"
-                :icon="['fas', 'bullhorn']"
-                style=""
-              />
-            </div>
-            <h5 class="font-bold text-3xl leading-tight mt-8 md:mt-10">
-              The project I share the&nbsp;most
-            </h5>
-            <p class="mt-2 text-xl font-serif">
-              I tell all my friends about my
-              <nuxt-link
-                to="/projects/johnnyseeds-web-crawler"
-                class="underline text-teal-500"
-                >JohnnySeeds Harvest Tracker</nuxt-link
-              >
-            </p>
-          </div>
-          <div
-            class="pt-0 pb-8 px-8 md:px-12 ml-2 rounded-lg border-indigo-400 border-2 shadow-lg mt-8 md:mt-0"
-          >
-            <div class="h-0">
-              <fa
-                class="h-12 w-12 p-2 fill-current text-white bg-indigo-500 rounded-full relative md:h-16 md:p-4 project-icon"
-                :icon="['fas', 'globe-americas']"
-              />
-            </div>
-            <h5 class="font-bold text-3xl leading-tight mt-8 md:mt-10">
-              A project built across&nbsp;cultures
-            </h5>
-            <p class="mt-2 text-xl font-serif">
-              For the
-              <nuxt-link to="/projects" class="underline text-teal-500"
-                >Virtual Classes</nuxt-link
-              >
-              project I collaborated with a core team in four timezones, across
-              three countries.
-            </p>
-          </div>
+
+        <div class="grid md:grid-cols-2 text-left mt-6 md:mt-8">
+          <featured-project
+            :project-icon="['fas', 'bullhorn']"
+            project-superlative="The project I share the&nbsp;most"
+            project-description="I tell all my friends about my Johnny Seeds Harvest Tracker."
+            project-slug="/projects/johnnyseeds-web-crawler"
+          />
+          <featured-project
+            :project-icon="['fas', 'globe-americas']"
+            project-superlative="A project built across&nbsp;cultures"
+            project-description="For the Virtual Classes project I collaborated with a core team in four timezones, across
+              three countries."
+            project-slug="/projects/johnnyseeds-web-crawler"
+          />
         </div>
         <div class="mt-6 md:mt-12">
           <nuxt-link
@@ -131,10 +100,14 @@
 <script>
 import moment from 'moment'
 import TextMessage from '@/components/TextMessage.vue'
+import HighlightedText from '@/components/HighlightedText.vue'
+import FeaturedProject from '@/components/FeaturedProject.vue'
 
 export default {
   components: {
-    TextMessage
+    TextMessage,
+    HighlightedText,
+    FeaturedProject
   },
   data() {
     return {
@@ -189,15 +162,6 @@ export default {
 .profile-image {
   @screen lg {
     height: 22rem;
-  }
-}
-
-.project-icon {
-  width: 3rem !important;
-  top: -1.5rem;
-  @screen lg {
-    width: 4rem !important;
-    top: -2rem;
   }
 }
 </style>
