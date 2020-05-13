@@ -1,14 +1,14 @@
 <template>
   <div>
-    <div class="bg-gray-200" style="min-height: 550px;">
-      <img class="m-auto" src="/img/TimMcHugh_Full.jpg" alt="" />
-      <div class="px-4 pt-0 relative" style="margin-top: -8px; top: -40px;">
+    <div class="bg-gray-200 lg:flex items-center lg:bg-white">
+      <img class="m-auto lg:w-7/12" src="/img/TimMcHugh_Full.jpg" alt="" />
+      <div class="px-4 pt-0 relative lg:w-5/12 messages-app">
         <div
-          class="flex flex-col px-6 py-4 items-start sm:mx-auto  max-w-lg border border-gray-300 rounded shadow-2xl overflow-y-scroll sm:w-full bg-white"
+          class="flex flex-col items-start w-full px-6 py-4 sm:mx-auto border border-gray-400 rounded shadow-2xl bg-white"
         >
           <div class="text-center w-full mb-2">
             <client-only>
-              <h5>{{ new Date() }}</h5>
+              <h5>{{ prettyLoadTime }}</h5>
             </client-only>
           </div>
 
@@ -33,28 +33,72 @@
       </div>
     </div>
 
-    <div id="projects" class="py-16 px-4 md:p-32 text-center">
-      <h4 class="text-lg text-blue-500 uppercase font-black leading-tight">
+    <div class="bg-indigo-600 text-white px-8 py-12">
+      <h3 class="text-2xl">About</h3>
+      <p class="font-serif mt-6">
+        My passion for technology can be traced back to my pre-professional
+        days. Whether I was booting obscure linux distros or building black jack
+        games in the terminal, I’ve been on a technology path from the start.
+        The reason? I like
+        <span class="bg-yellow-400 text-gray-700"
+          >exploring the possibilities</span
+        >
+        offered by technology to create progress away from the keyboard.
+      </p>
+      <p class="font-serif mt-3">
+        Outside of the “office”, I’m committed to family and fitness. I love to
+        cook, and I am always looking to try a new dish that can bring a smile
+        to someone’s face. I’m currently trying my hand at gardening, like most
+        things I do its developed into a big project (If all turns out well,
+        I’ll be needing to get rid of 100 watermelons).
+      </p>
+      <nuxt-link to="/about" class="underline mt-4 block text-lg text-teal-100">
+        Read more
+      </nuxt-link>
+    </div>
+
+    <div id="projects" class="py-16 px-8 md:p-32 text-center">
+      <h4 class="text-lg text-indigo-500 uppercase font-black leading-tight">
         Portfolio
       </h4>
-      <h2 class="text-4xl leading-tight">Recent Projects</h2>
+      <h2 class="text-4xl leading-tight">Featured Projects</h2>
       <div class="grid md:grid-cols-2 text-left mt-6">
-        <div class="bg-red-500 py-8 px-12 md:p-16">
-          <h5 class="font-bold text-2xl leading-tight">My favorite project</h5>
-          <p class="mt-2">Working with brilliant people!</p>
-        </div>
-        <div class="bg-teal-500 py-8 px-12 md:p-16">
+        <div
+          class="py-8 px-8 md:p-16 rounded-lg border-indigo-400 border-2 shadow-xl"
+        >
           <h5 class="font-bold text-2xl leading-tight">
-            The project that taught me the most
+            <fa :icon="['fas', 'bullhorn']" />
+            &nbsp;The project I share the most
           </h5>
           <p class="mt-2">
-            Where I learned more about myself than the project.
+            I tell all my friends about my
+            <nuxt-link
+              to="/projects/johnnyseeds-web-crawler"
+              class="underline text-teal-400"
+              >JohnnySeeds Harvest Tracker</nuxt-link
+            >
+          </p>
+        </div>
+        <div
+          class="py-8 px-8 md:p-16 rounded-lg border-indigo-400 border-2 shadow-xl mt-4"
+        >
+          <h5 class="font-bold text-2xl leading-tight">
+            <fa :icon="['fas', 'globe-americas']" />
+            &nbsp;A project built across cultures
+          </h5>
+          <p class="mt-2">
+            For the
+            <nuxt-link to="/projects" class="underline text-teal-400"
+              >Virtual Classes</nuxt-link
+            >
+            project I collaborated with a core team in four timezones, across
+            three countries.
           </p>
         </div>
       </div>
-      <div class="mt-8">
-        <nuxt-link to="/projects" class="underline text-blue-500">
-          See all projects
+      <div class="mt-6">
+        <nuxt-link to="/projects" class="underline text-teal-400 text-xl">
+          Browse all projects
         </nuxt-link>
       </div>
     </div>
@@ -109,4 +153,13 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+.messages-app {
+  top: -40px;
+  min-height: 310px;
+  @screen lg {
+    top: 0px;
+    left: -80px;
+  }
+}
+</style>
