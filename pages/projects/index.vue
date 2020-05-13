@@ -2,15 +2,15 @@
   <div class="px-8 py-16 lg:mx-auto max-w-4xl">
     <h1 class="text-4xl">Projects</h1>
     <div>
-      <h5 class="text-gray-600">
-        Filter by language or framework
+      <h5 class="text-gray-600 text-lg">
+        Filter by a language or framework
       </h5>
-      <div class="flex mt-1">
+      <div class="flex mt-1 text-gray-600">
         <div
           v-for="tag in tags"
           :key="tag.slug"
-          class="flex flex-col justify-center p-2 w-16 border rounded mr-2 text-gray-800"
-          :class="tag.selected ? 'shadow' : ''"
+          class="flex flex-col justify-center p-4 w-20 border rounded mr-2 cursor-pointer"
+          :class="selectedTag === tag.slug ? 'shadow text-gray-900' : ''"
           :style="{
             background: selectedTag === tag.slug ? tag.color : ''
           }"
@@ -18,7 +18,7 @@
         >
           <fa :icon="['fab', tag.icon]" class="fa--tag h-8" />
 
-          <h5 class="text-center">
+          <h5 class="text-center underline">
             {{ tag.title }}
           </h5>
         </div>
