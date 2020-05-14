@@ -1,10 +1,10 @@
 {
   "date": "2020-05-13T20:08:58.392Z",
-  "thumbnail": "/img/webcrawler_thumb.png",
+  "thumbnail": "/img/portfolio_thumb.png",
   "tags": [
     "vue"
   ],
   "title": "My portfolio",
   "description": "A meta post about this very website.",
-  "body": "This portfolio is my first JAMstack application. It turns out there are a lot of gotchas with Nuxt, so I'm glad I was able to do this project at my own pace.\n\nCheck it out on <a>github</a> (REPLACE LINK).\n\n## Technologies & Libraries\n* NuxtJS\n* TailwindCSS\n* Vuex"
+  "body": "This portfolio is my first JAMstack application. It turns out there are a lot of gotchas with Nuxt, so I'm glad I was able to do this project at my own pace.\n\nCheck it out on [Github](https://github.com/timmch/my-portfolio).\n\n## Technologies & Libraries\n* NuxtJS\n* TailwindCSS\n* Vuex"
 }
