@@ -1,30 +1,38 @@
 <template>
-  <div class=" max-w-lg mx-auto mt-16">
-    <div>
+  <div class="max-w-4xl mx-auto mt-8">
+    <div class="px-4">
       <nuxt-link
         :to="{ name: 'projects' }"
-        class="text-gray-600 border-2 rounded p-2 text-sm"
+        class="text-gray-600 border rounded p-2 text-sm"
         prefetch
-        ><fa icon="chevron-left" /> See all projects</nuxt-link
+        ><fa icon="chevron-left" class="w-3 h-3" /> Browse all
+        projects</nuxt-link
       >
-    </div>
-    <h1 class=" text-2xl font-bold mt-6">{{ project.title }}</h1>
-    <img class="mt-4 rounded-md shadow-lg" :src="project.thumbnail" alt="" />
-    <div class="mt-1">
-      <span
-        v-for="tag in tags"
-        :key="tag.slug"
-        :style="{ background: tag.color }"
-        class=" px-2 py-1 inline-block"
-      >
-        <fa :icon="['fab', tag.icon]" />
-        {{ tag.title }}
-      </span>
     </div>
     <div
-      class="mt-3 mb-8 markdown-container"
-      v-html="$md.render(project.body)"
-    ></div>
+      class="flex flex-col md:flex-row-reverse mx-4 rounded-lg shadow-2xl overflow-hidden mt-8 mb-2 justify-end bg-indigo-600"
+    >
+      <img class="w-full md:w-7/12" :src="project.thumbnail" alt="" />
+      <div class="p-4 md:px-10 text-white self-end md:w-5/12">
+        <h1 class="text-4xl leading-tight font-hairline font-sans">
+          {{ project.title }}
+        </h1>
+      </div>
+    </div>
+    <div class="px-8">
+      <div>
+        <span
+          v-for="(tag, index) in tags"
+          :key="index"
+          class="text-gray-600 italics inline-block pr-2"
+          >#{{ tag.slug }}</span
+        >
+      </div>
+      <div
+        class="mt-1 mb-8 markdown-container "
+        v-html="$md.render(project.body)"
+      ></div>
+    </div>
   </div>
 </template>
 
@@ -59,4 +67,8 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+.fa--tag {
+  width: 100%;
+}
+</style>

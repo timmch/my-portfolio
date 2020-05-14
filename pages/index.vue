@@ -69,7 +69,7 @@
         </h4>
         <h2 class="text-4xl leading-tight">Featured Projects</h2>
 
-        <div class="grid md:grid-cols-2 text-left mt-6 md:mt-8">
+        <div class="grid md:grid-cols-2 text-left mt-6 md:mt-8 md:col-gap-4">
           <featured-project
             :project-icon="['fas', 'bullhorn']"
             project-superlative="The project I share the&nbsp;most"

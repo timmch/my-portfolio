@@ -1,6 +1,6 @@
 <template>
   <div
-    class="mt-8 pt-0 pb-8 px-8 md:px-12 mr-2 rounded-lg border-indigo-400 border-2 shadow-lg"
+    class="mt-8 pt-0 pb-8 px-8 md:px-12 rounded-lg border-indigo-400 border-2 shadow-lg"
   >
     <div class="h-0">
       <fa

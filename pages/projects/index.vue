@@ -45,7 +45,7 @@
               </div>
             </div>
             <nuxt-link
-              class="block py-2 border border-teal-500 text-teal-500 rounded hover:bg-teal-500 hover:text-white text-center mt-4 mb-2 lg:my-0 self-center"
+              class="block py-2 border border-teal-500 text-white rounded bg-teal-500 hover:bg-white hover:text-teal-500 text-center mt-4 mb-2 lg:my-0 self-center shadow"
               :to="{
                 name: 'projects-project',
                 params: { project: project.slug }
