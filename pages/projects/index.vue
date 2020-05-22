@@ -33,7 +33,16 @@
             style="grid-template-columns: auto 200px"
           >
             <div class="lg:pr-10">
-              <h2 class="text-2xl text-indigo-600 mb-1">{{ project.title }}</h2>
+              <nuxt-link
+                :to="{
+                  name: 'projects-project',
+                  params: { project: project.slug }
+                }"
+              >
+                <h2 class="text-2xl text-indigo-600 mb-1">
+                  {{ project.title }}
+                </h2>
+              </nuxt-link>
               <p class="mb-1">{{ project.description }}</p>
               <div>
                 <span
