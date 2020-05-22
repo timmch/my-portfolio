@@ -12,6 +12,11 @@
               Tim McHugh
             </h2>
           </nuxt-link>
+          <a
+            href="mailto:timmch@gmail.com"
+            class="block text-white font-semibold"
+            >timmch@gmail.com</a
+          >
         </div>
         <div class="sm:hidden">
           <button
@@ -50,10 +55,11 @@
           class="block px-2 py-1 text-white font-semibold rounded hover:bg-indigo-700"
           >About</nuxt-link
         >
-        <a
-          href="mailto:timmch@gmail.com"
-          class="mt-1 block px-2 py-1 text-white font-semibold rounded hover:bg-indigo-700 sm:mt-0 sm:ml-2"
-          >timmch@gmail.com</a
+        <nuxt-link
+          :to="'/remote'"
+          href="#"
+          class="block px-2 py-1 text-white font-semibold rounded hover:bg-indigo-700"
+          >Remote</nuxt-link
         >
       </nav>
     </header>

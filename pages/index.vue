@@ -38,27 +38,36 @@
     <div class="bg-indigo-600 text-white px-8 pt-16 pb-20">
       <div class="max-w-4xl m-auto">
         <h3 class="text-4xl">About</h3>
-        <p class="font-serif mt-6 text-xl">
-          I’m a full-stack developer experienced in building applications at
-          scale. My startup background informs my ownership mentality.
+        <p class="font-serif mt-4 text-xl">
+          I’m a Full Stack Developer fueled by helping others, exploring
+          possibilities, and
+          <nuxt-link :to="'/remote'" class="underline text-teal-300"
+            >remote&nbsp;teaming</nuxt-link
+          >.
         </p>
         <p class="font-serif mt-4 text-xl">
-          My
-          <highlighted-text selected-text="adaptability and determination" />
-          fueled my founding of MaidSuite. There I coded software used to
-          schedule teams.
+          Creating unconventional solutions gets me out of bed. Solutions that
+          make users better.
         </p>
+        <h4 class="font-serif mt-4 text-2xl border-l-4 border-yellow-400 pl-2">
+          I help users
+          <highlighted-text selected-text="make progress" /> in their lives.
+        </h4>
         <p class="font-serif mt-4 text-xl">
-          I believe relationship is foundational to success, which I live out by
-          learning and growing alongside my teammates. I am currently building
-          VueJS applications for Simon Sinek and looking for a new challenge.
-          Reach out to timmch@gmail.com to connect!
+          <!-- I believe relationship is foundational to success, which I live out by
+          learning and growing alongside my teammates.  -->
+          I am currently building Vue.js apps for Simon Sinek and looking for a
+          new challenge. You can contact me at
+          <a class="underline text-teal-300" href="mailto:timmch@gmail.com"
+            >timmch@gmail.com</a
+          >
+          to connect!
         </p>
         <nuxt-link
           to="/about"
-          class="underline mt-4 block text-xl text-teal-100"
+          class="underline mt-4 block text-xl text-teal-300"
         >
-          Read more
+          Learn more about my background
         </nuxt-link>
       </div>
     </div>
