@@ -1,5 +1,5 @@
 <template>
-  <div class="px-8 py-16 lg:mx-auto max-w-4xl">
+  <div class="px-8 py-16 lg:mx-auto lg:px-0 max-w-4xl">
     <h1 class="text-4xl">Projects</h1>
     <div>
       <h5 class="text-gray-600 text-lg">

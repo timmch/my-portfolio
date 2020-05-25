@@ -19,55 +19,32 @@
             text-content="Hi there! 👋<br />Come on in and look around to learn about me and my work."
             :delay-time="1500"
           />
-
-          <!-- <text-message
-            v-if="showSecondText"
-            text-content="Text me at <a href='tel:+19789444946' class='underline'>+1&nbsp;(978)&nbsp;944-4946</a>."
-            :delay-time="1250"
-          /> -->
-
-          <!-- <text-message
-            v-if="showThirdText"
-            text-content="Take a look around to learn more about me and my work."
-            :delay-time="1750"
-          /> -->
         </div>
       </div>
     </div>
 
     <div class="bg-indigo-600 text-white px-8 pt-16 pb-20">
       <div class="max-w-4xl m-auto">
-        <h3 class="text-4xl">About</h3>
-        <p class="font-serif mt-4 text-xl">
+        <p class="font-serif mt-4 text-3xl">
           I’m a Full Stack Developer fueled by helping others, exploring
-          possibilities, and
-          <nuxt-link :to="'/remote'" class="underline text-teal-300"
-            >remote&nbsp;teaming</nuxt-link
-          >.
+          possibilities, and working remotely.
         </p>
         <p class="font-serif mt-4 text-xl">
-          Creating unconventional solutions gets me out of bed. Solutions that
-          make users better.
+          Creating unconventional solutions is what gets me out of bed each
+          morning -- solutions that help users make progress in their lives.
         </p>
-        <h4 class="font-serif mt-4 text-2xl border-l-4 border-yellow-400 pl-2">
-          I help users
-          <highlighted-text selected-text="make progress" /> in their lives.
-        </h4>
         <p class="font-serif mt-4 text-xl">
-          <!-- I believe relationship is foundational to success, which I live out by
-          learning and growing alongside my teammates.  -->
           I am currently building Vue.js apps for Simon Sinek and looking for a
-          new challenge. You can contact me at
+          new challenge. Slide into my DMs at
           <a class="underline text-teal-300" href="mailto:timmch@gmail.com"
             >timmch@gmail.com</a
-          >
-          to connect!
+          >.
         </p>
         <nuxt-link
           to="/about"
           class="underline mt-4 block text-xl text-teal-300"
         >
-          Learn more about my background
+          Get to know me better
         </nuxt-link>
       </div>
     </div>
@@ -109,13 +86,11 @@
 <script>
 import moment from 'moment'
 import TextMessage from '@/components/TextMessage.vue'
-import HighlightedText from '@/components/HighlightedText.vue'
 import FeaturedProject from '@/components/FeaturedProject.vue'
 
 export default {
   components: {
     TextMessage,
-    HighlightedText,
     FeaturedProject
   },
   data() {

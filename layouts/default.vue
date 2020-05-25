@@ -2,6 +2,18 @@
   <div>
     <Navbar />
     <nuxt />
+    <footer class="text-center py-4 flex justify-center items-center flex-col">
+      <h5 class="text-md text-gray-700">
+        <fa :icon="['fas', 'hammer']" /> Built with Vue.js, Nuxt.js, and Netlify
+        <br />
+        <nuxt-link
+          :to="'/projects/my-portfolio'"
+          class="underline text-teal-500"
+        >
+          Read about this Project
+        </nuxt-link>
+      </h5>
+    </footer>
   </div>
 </template>
 
