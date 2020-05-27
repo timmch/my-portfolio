@@ -9,7 +9,7 @@
         <div
           v-for="tag in tags"
           :key="tag.slug"
-          class="flex flex-col justify-center p-4 w-20 border rounded mr-2 cursor-pointer"
+          class="flex flex-col justify-center p-4 w-auto border rounded mr-2 cursor-pointer sortable-tag"
           :class="selectedTag === tag.slug ? 'shadow text-gray-900' : ''"
           :style="{
             background: selectedTag === tag.slug ? tag.color : ''
@@ -18,8 +18,8 @@
         >
           <fa :icon="['fab', tag.icon]" class="fa--tag h-8" />
 
-          <h5 class="text-center underline">
-            {{ tag.title }}
+          <h5 class="text-center mt-1">
+            {{ tag.title }} <span>({{ tag.count }})</span>
           </h5>
         </div>
       </div>
@@ -70,6 +70,17 @@
 </template>
 
 <script>
+function compareCount(a, b) {
+  if (a.count > b.count) {
+    return -1
+  }
+  if (a.count < b.count) {
+    return 1
+  }
+  // a must be equal to b
+  return 0
+}
+
 export default {
   data() {
     return {
@@ -78,9 +89,7 @@ export default {
   },
   computed: {
     projects() {
-      console.log('here', this.selectedTag)
       if (!this.selectedTag) return this.$store.state.projects
-      console.log('continues')
       const result = this.$store.state.projects.filter((project) =>
         project.tags.includes(this.selectedTag)
       )
@@ -92,10 +101,22 @@ export default {
     },
     tags() {
       const tagsData = [...this.$store.state.tags]
+      const essentialTags = []
       for (let i = 0; i < tagsData.length; i++) {
-        tagsData[i].selected = false
+        essentialTags[i] = {}
+        essentialTags[i].slug = tagsData[i].slug
+        essentialTags[i].icon = tagsData[i].icon
+        essentialTags[i].title = tagsData[i].title
+        essentialTags[i].color = tagsData[i].color
+        essentialTags[i].selected = false
+        essentialTags[i].count = 0
+        for (let j = 0; j < this.$store.state.projects.length; j++) {
+          if (this.$store.state.projects[j].tags.includes(tagsData[i].slug)) {
+            essentialTags[i].count++
+          }
+        }
       }
-      return tagsData
+      return essentialTags.sort(compareCount)
     }
   },
   methods: {
@@ -115,5 +136,8 @@ export default {
   @screen lg {
     width: 2rem !important;
   }
+}
+.sortable-tag {
+  min-width: 5rem;
 }
 </style>

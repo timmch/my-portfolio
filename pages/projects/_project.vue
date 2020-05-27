@@ -1,6 +1,6 @@
 <template>
-  <div class="max-w-4xl mx-auto mt-8">
-    <div class="px-4">
+  <div class="max-w-2xl mx-auto mt-8">
+    <div class="mx-4 lg:mx-0">
       <nuxt-link
         :to="{ name: 'projects' }"
         class="text-gray-600 border rounded p-2 text-sm"
@@ -9,27 +9,25 @@
         projects</nuxt-link
       >
     </div>
-    <div
-      class="flex flex-col md:flex-row-reverse mx-4 rounded-lg shadow-2xl overflow-hidden mt-8 mb-2 justify-end bg-indigo-600"
-    >
-      <img class="w-full md:w-7/12" :src="project.thumbnail" alt="" />
-      <div class="p-4 md:px-10 text-white self-end md:w-5/12">
-        <h1 class="text-4xl leading-tight font-hairline font-sans">
-          {{ project.title }}
-        </h1>
-      </div>
+    <div class="mx-4 lg:mx-0 rounded-lg shadow-2xl overflow-hidden mt-8 mb-2">
+      <img class="w-full" :src="project.thumbnail" alt="" />
     </div>
-    <div class="px-8">
+    <div class="mx-4 lg:px-0 lg:mx-auto lg:max-w-2xl mt-4 lg:mt-8">
+      <h1
+        class="text-4xl leading-tight font-hairline font-sans text-indigo-600"
+      >
+        {{ project.title }}
+      </h1>
       <div>
         <span
           v-for="(tag, index) in tags"
           :key="index"
-          class="text-gray-600 italics inline-block pr-2"
+          class="text-gray-700 italics inline-block pr-2"
           >#{{ tag.slug }}</span
         >
       </div>
       <div
-        class="mt-1 mb-8 markdown-container "
+        class="mt-1 mb-8 markdown-container text-lg"
         v-html="$md.render(project.body)"
       ></div>
     </div>

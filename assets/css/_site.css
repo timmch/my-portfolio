@@ -1,5 +1,5 @@
 .markdown-container h3 {
-    @apply font-mono text-xl mt-5;
+    @apply font-mono text-2xl mt-8;
 }
 
 .markdown-container ul {
@@ -8,7 +8,7 @@
 }
 
 .markdown-container ul>li {
-    @apply mt-2;
+    @apply mt-4;
 }
 
 .markdown-container a {
@@ -16,5 +16,9 @@
 }
 
 .markdown-container p {
-    @apply mt-3 font-normal leading-snug;
+    @apply mt-3 font-normal leading-normal;
+}
+
+.markdown-container code {
+    @apply bg-gray-800 text-orange-400 rounded px-1 py-1;
 }

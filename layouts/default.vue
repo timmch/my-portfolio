@@ -2,7 +2,9 @@
   <div>
     <Navbar />
     <nuxt />
-    <footer class="text-center py-4 flex justify-center items-center flex-col">
+    <footer
+      class="text-center mt-2 py-6 flex justify-center items-center flex-col border-gray-300 border-t-2"
+    >
       <h5 class="text-md text-gray-700">
         <fa :icon="['fas', 'hammer']" /> Built with Vue.js, Nuxt.js, and Netlify
         <br />
