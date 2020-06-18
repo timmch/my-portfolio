@@ -5,7 +5,7 @@
         :to="{ name: 'projects' }"
         class="text-gray-600 border rounded p-2 text-sm"
         prefetch
-        ><fa icon="chevron-left" class="w-3 h-3" /> Browse all
+        ><fa icon="chevron-left" class="w-3 h-3 inline-block" /> Browse all
         projects</nuxt-link
       >
     </div>

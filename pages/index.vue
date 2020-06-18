@@ -40,12 +40,12 @@
             >timmch@gmail.com</a
           >.
         </p>
-        <nuxt-link
+        <!-- <nuxt-link
           to="/about"
           class="underline mt-4 block text-xl text-teal-300"
         >
           Get to know me better
-        </nuxt-link>
+        </nuxt-link> -->
       </div>
     </div>
 

@@ -49,17 +49,11 @@
           class="block px-2 py-1 text-white font-semibold rounded hover:bg-indigo-700"
           >Projects</nuxt-link
         >
-        <nuxt-link
-          :to="'/about'"
-          href="#"
+        <a
+          href="https://github.com/timmch/teaming-resources"
+          target="_blank"
           class="block px-2 py-1 text-white font-semibold rounded hover:bg-indigo-700"
-          >About</nuxt-link
-        >
-        <nuxt-link
-          :to="'/remote'"
-          href="#"
-          class="block px-2 py-1 text-white font-semibold rounded hover:bg-indigo-700"
-          >Remote</nuxt-link
+          >Remote</a
         >
       </nav>
     </header>
